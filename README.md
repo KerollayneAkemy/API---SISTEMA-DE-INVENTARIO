@@ -1,21 +1,30 @@
 📦 API - Sistema de Inventário
 
-API REST para gerenciamento de inventário de produtos e categorias, desenvolvida com Node.js, Express e PostgreSQL, utilizando o Supabase como banco de dados.
+API REST para gerenciamento de produtos e categorias.
 
-O projeto utiliza arquitetura em camadas e possui relacionamento entre as tabelas de produtos e categorias.
+Desenvolvida com Node.js, Express e PostgreSQL, utilizando o Supabase como banco de dados e seguindo o padrão de Arquitetura em Camadas.
 
 👩‍💻 Discentes
 Ana Luiza Marcelino De Carli
 Emily Pereira Gonçalves
 Kerollayne Akemy Gonçalves Pereira
-🚀 Tecnologias utilizadas
-Node.js
-Express
-PostgreSQL
-Supabase
-dotenv
-pg
-📁 Estrutura do projeto
+🚀 Tecnologias
+<div align="center">
+
+Node.js • Express • PostgreSQL • Supabase
+
+</div>
+🏗️ Arquitetura
+
+O projeto foi organizado seguindo a seguinte estrutura:
+
+Routes
+   ↓
+Controllers
+   ↓
+Models
+   ↓
+Banco de Dados
 src/
 ├── config/
 │   └── database.js
@@ -29,41 +38,41 @@ src/
 │   ├── categoriaRoutes.js
 │   └── produtoRoutes.js
 └── server.js
-🏗️ Arquitetura
-Routes → Controllers → Models → Banco de Dados
 🗄️ Banco de Dados
 
-O sistema possui duas tabelas:
+O sistema possui duas entidades principais:
 
-categorias
-produtos
+📁 Categorias
+      │
+      │ 1 : N
+      ▼
+📦 Produtos
 
-Uma categoria pode possuir vários produtos, formando um relacionamento 1:N.
+Cada produto pertence a uma categoria, utilizando o campo categoria_id.
 
-Categoria 1 ─────── N Produtos
 🔌 Endpoints
 Categorias
-Método	Rota	Descrição
+Método	Endpoint	Descrição
 GET	/categorias	Listar categorias
-GET	/categorias/:id	Buscar categoria por ID
+GET	/categorias/:id	Buscar categoria
 POST	/categorias	Criar categoria
 Produtos
-Método	Rota	Descrição
+Método	Endpoint	Descrição
 GET	/produtos	Listar produtos
-GET	/produtos/:id	Buscar produto por ID
+GET	/produtos/:id	Buscar produto
 POST	/produtos	Criar produto
 PUT	/produtos/:id	Atualizar produto
 DELETE	/produtos/:id	Excluir produto
 ✅ Validações
 
-A API possui validações para impedir o cadastro de dados inválidos, como:
+A API realiza validações para evitar dados inválidos, como:
 
-Produto sem nome;
-Preço menor ou igual a zero;
-Quantidade negativa;
-Produto sem categoria.
+❌ Produto sem nome
+❌ Preço menor ou igual a zero
+❌ Quantidade negativa
+❌ Produto sem categoria
 
-Exemplo de resposta:
+Exemplo:
 
 {
   "mensagem": "O nome do produto é obrigatório"
@@ -78,15 +87,20 @@ Instale as dependências:
 
 npm install
 
-Crie um arquivo .env com a conexão do banco:
+Configure o arquivo .env:
 
 DATABASE_URL=sua_connection_string
 PORT=3000
 
-Execute o projeto:
+Execute:
 
 npm start
 
-Servidor disponível em:
+🚀 Servidor disponível em:
 
 http://localhost:3000
+<div align="center">
+
+Projeto Prático • API REST • Arquitetura em Camadas
+
+</div>
