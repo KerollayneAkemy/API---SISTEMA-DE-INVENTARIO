@@ -1,0 +1,17 @@
+{
+  "name": "inventario-api",
+  "version": "1.0.0",
+  "description": "API de inventário de produtos e categorias com arquitetura em camadas e Supabase.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": ["api", "express", "postgresql", "supabase", "inventario"],
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}

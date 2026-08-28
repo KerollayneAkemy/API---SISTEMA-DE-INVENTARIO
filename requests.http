@@ -1,0 +1,52 @@
+@baseUrl = http://localhost:3000
+
+### API
+GET {{baseUrl}}/
+
+### Saúde
+GET {{baseUrl}}/health
+
+### Listar categorias
+GET {{baseUrl}}/categorias
+
+### Criar categoria
+POST {{baseUrl}}/categorias
+Content-Type: application/json
+
+{
+  "nome": "Celulares",
+  "descricao": "Smartphones e acessórios"
+}
+
+### Listar produtos
+GET {{baseUrl}}/produtos
+
+### Buscar produto
+GET {{baseUrl}}/produtos/1
+
+### Criar produto
+POST {{baseUrl}}/produtos
+Content-Type: application/json
+
+{
+  "nome": "Monitor 24 polegadas",
+  "descricao": "Monitor para computador",
+  "preco": 899.90,
+  "quantidade": 5,
+  "categoria_id": 2,
+}
+
+### Atualizar produto
+PUT {{baseUrl}}/produtos/1
+Content-Type: application/json
+
+{
+  "nome": "Teclado Mecânico RGB",
+  "descricao": "Teclado mecânico com iluminação RGB",
+  "preco": 280.00,
+  "quantidade": 8,
+  "categoria_id": 2
+}
+
+### Excluir produto
+DELETE {{baseUrl}}/produtos/1
